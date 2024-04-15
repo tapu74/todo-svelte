@@ -1,0 +1,19 @@
+#datePicker {
+    border: none;
+    /* padding: inherit; */
+    background-color:oklch(var(--b1));
+    appearance: none;
+    font-family: inherit;
+    color: inherit;
+    height: 2.5rem;
+}
+#datePicker:focus {
+    width: inherit;
+    box-shadow: inherit;
+}
+
+:root {
+--date-picker-background:oklch(var(--b1));
+--date-picker-foreground:'';
+
+}
