@@ -154,25 +154,25 @@
 
   {#each tasks as task, index (index)}
     {#if !task.isDone}
-      <div class="grid-12 columns-2">
-        <div>
+      <div class="col-span-3">
+        <div class="grid grid-cols-5 gap-2">
           <input
             type="text"
             placeholder="input your to do"
-            class="input input-bordered w-full max-w-xs"
+            class="input input-bordered col-span-3 w-full max-w-xs px-4 py-2"
             value={task.value}
             id={`input-${index}`}
             on:input={(event) => editTask(event, index)}
           />
           <!-- on:input={(event) => (tasks[index].value = event.target.value)} -->
-        </div>
-        <div class="columns-2">
+
           <button
-            class="btn size-1 btn-circle btn-success w-1/2"
+            class="btn btn-circle btn-success col-span-1 w-1/2 px-4 py-2"
             on:click={() => taskDone(index)}>Done</button
           >
+
           <button
-            class="btn size-1 btn-circle btn-error w-1/2"
+            class="btn btn-circle btn-error col-span-1 w-1/2 px-4 py-2"
             on:click={() => taskDelete(index)}>Delete</button
           >
         </div>
@@ -190,11 +190,13 @@
       </div>
     {/if}
   {/each}
-  <div class="divider"></div>
+ 
   {#if id}
+  <div class="divider"></div>
     <button class="btn btn-success" on:click={submitForm}>Update</button>
     <button class="btn btn-error" on:click={deleteTodo}>Delete</button>
   {:else}
     <button class="btn btn-success" on:click={submitForm}>Save</button>
   {/if}
+  <button class="btn btn-outline" on:click={cancel}>Close</button>
 </Modal>

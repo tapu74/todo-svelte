@@ -6,7 +6,6 @@
     export let projectName: string;
     export let description: string;
     export let dueDate: Date|null;
-    // export let tasks: [];
 
     let isLoading = false;
 
@@ -24,6 +23,8 @@
             <div class="badge badge-accent">{dueDate}</div>
         </div>
         <div class="card-actions justify-left">
+                <div class="divider"></div>
+
             <button
                 class="btn btn-warning"
                 on:click={() => dispatch("edit", id)}>Edit</button
